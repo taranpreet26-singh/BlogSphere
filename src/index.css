@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+:root {
+  font-family:"Monomakh", serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: black;
+  background-color: rgb(247 244 237);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.monomakh-regular {
+  font-family: "Monomakh", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
