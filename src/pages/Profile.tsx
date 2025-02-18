@@ -131,7 +131,7 @@ const Profile: React.FC = () => {
             {(userBlog.length > 1) ?
               userBlog.map((element: any, index: number) => {
                 return <div key={index} className='m-10 '>
-                  <div className=' w-[32rem] bg-gray-200 rounded-xl'>
+                  <div className=' w-full bg-gray-200 rounded-xl'>
                     <div className=' flex gap-2 items-center justify-end px-4'>
 
                       <svg
