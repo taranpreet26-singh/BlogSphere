@@ -19,12 +19,10 @@ const Login: React.FC = () => {
          password
        })
        toast.success(response.data.msg)
-       setTimeout(() => {
-        //  const token = localStorage.setItem("token",response.data.token)
+         localStorage.setItem("token",response.data.token)
          if(localStorage.getItem("token")){
            navigate('/home')
-          }
-        }, 5000);
+          }        
      }
    } catch (error:any) {
       if(error.response.status === 402){
