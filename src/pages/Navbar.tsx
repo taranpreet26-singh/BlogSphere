@@ -76,7 +76,7 @@ const Navbar: React.FC = () => {
                                 Write
                             </div>
                         </div>
-                        <div className='text-xl w-[7rem] flex items-center mx-4 justify-center rounded-xl border-2 duration-150 hover:bg-green-500 hover:scale-105 px-2 bg-green-300' onClick={()=>{
+                        <div className='text-xl w-[7rem] flex items-center mx-4 justify-center rounded-xl border-2 duration-150 hover:bg-green-500 hover:scale-105 px-2 bg-green-400' onClick={()=>{
                             localStorage.removeItem("token")
                             navigate('/')
                         }}>
