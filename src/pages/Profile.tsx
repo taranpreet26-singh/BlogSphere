@@ -107,7 +107,7 @@ const Profile: React.FC = () => {
         <div className=' w-full h-screen flex items-center pt-10 justify-start flex-col'>
           <div className=" w-full h-screen flex flex-col items-center pt-10">
             <h2 className="text-3xl font-bold">My Profile</h2>
-            <div className="bg-white p-6 mt-6 rounded-lg shadow-lg w-[31rem]">
+            <div className="bg-white p-6 mt-6 rounded-lg shadow-lg w-fit">
               <p className="text-xl">
                 <strong>Name:</strong> {firstName} {lastName}
               </p>
@@ -128,7 +128,7 @@ const Profile: React.FC = () => {
             }} className='bg-gray-300 w-full h-14 px-4 text-xl rounded-xl' />
           </div>
           <div className='overflow-y-scroll scrollbar-none hide-scrollbar'>
-            {(userBlog.length > 1) ?
+            {(userBlog.length > 0) ?
               userBlog.map((element: any, index: number) => {
                 return <div key={index} className='m-10 '>
                   <div className=' w-full bg-gray-200 rounded-xl'>
