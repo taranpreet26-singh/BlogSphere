@@ -18,15 +18,18 @@ const Login: React.FC = () => {
          email,
          password
        })
-       toast.success(response.data.msg)
+       if(response.data.token){
+
+         toast.success(response.data.msg)
          localStorage.setItem("token",response.data.token)
          if(localStorage.getItem("token")){
            navigate('/home')
           }        
+        }
      }
    } catch (error:any) {
       if(error.response.status === 402){
-        toast.error(error.response.data.msg)
+        toast.error(error.response.data.msg + "or" + "You're not Registered")
       }
    }
   }
