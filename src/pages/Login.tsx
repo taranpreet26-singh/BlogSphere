@@ -62,7 +62,7 @@ const Login: React.FC = () => {
         <div className='mt-10'>
           <button className='bg-black text-white cursor-pointer rounded-full h-12 text-xl font-semibold w-[12rem] ' onClick={onLoginHandler}>Continue</button>
         </div>
-        <div className='mt-4 text-2xl hover:text-green-200' onClick={()=>{
+        <div className='mt-4 text-2xl hover:text-green-200 cursor-pointer' onClick={()=>{
                   navigate('/signup')
         }}>
           Sign Up
