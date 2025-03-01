@@ -30,6 +30,7 @@ const Login: React.FC = () => {
    } catch (error:any) {
       if(error.response.status === 402){
         toast.error(error.response.data.msg + "or" + "You're not Registered")
+
       }
    }
   }
@@ -60,6 +61,11 @@ const Login: React.FC = () => {
         </div>
         <div className='mt-10'>
           <button className='bg-black text-white cursor-pointer rounded-full h-12 text-xl font-semibold w-[12rem] ' onClick={onLoginHandler}>Continue</button>
+        </div>
+        <div onClick={()=>{
+                  navigate('/signup')
+        }}>
+          Sign Up
         </div>
       </div>
           <Toaster/>
