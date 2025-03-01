@@ -29,7 +29,7 @@ const Login: React.FC = () => {
      }
    } catch (error:any) {
       if(error.response.status === 402){
-        toast.error(error.response.data.msg + "or" + "You're not Registered")
+        toast.error(error.response.data.msg + " or " + "You're not Registered")
 
       }
    }
