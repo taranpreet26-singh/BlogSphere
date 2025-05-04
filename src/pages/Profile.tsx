@@ -3,7 +3,6 @@ import Navbar from './Navbar'
 import Cards from '../components/Cards'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 
 
