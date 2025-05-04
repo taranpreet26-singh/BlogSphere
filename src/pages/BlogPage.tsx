@@ -46,7 +46,6 @@ const BlogPage = () => {
           <h1 className="text-4xl font-bold text-gray-900">{blogData.title}</h1>
           <h3 className="text-xl italic text-gray-700">{blogData.subtitle}</h3>
 
-          {/* Image placed here after subtitle */}
           <div className="mb-8">
             {(blogData.image) ? <img
               src={blogData.image}

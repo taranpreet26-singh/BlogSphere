@@ -9,7 +9,9 @@ const Navbar: React.FC = () => {
     const [id, setId] = useState("")
     const [isBurgerClick,setIsBurgerClick] = useState(false)
     async function main() {
+
         try {
+            console.log(localStorage.getItem("token"))
             const response = await axios.get('https://blogsphere-backend-qnih.onrender.com/api/v1/user/info', {
                 headers: {
                     Authorization: localStorage.getItem("token")
