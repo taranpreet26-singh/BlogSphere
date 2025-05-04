@@ -3,7 +3,6 @@ import Navbar from "./Navbar";
 import Cards from "../components/Cards";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const Home: React.FC = () => {
   type BlogType = {
@@ -69,15 +68,7 @@ const Home: React.FC = () => {
           <Cards name={userNames[blog.userId] || "Loading..."} title={blog.title} content = {blog.content} subtitle={blog.subtitle} date={blog.date} />
         </div>
       )) : 
-      <div className="">
-      <DotLottieReact
-      src="https://lottie.host/3b5387bc-3de1-4742-b961-a9ad533ad37a/0BpmdEwe5Q.lottie"
-      loop
-      autoplay
-      width={100}
-      height={100}
-      
-    /></div> }
+          "No Blog Posted Yet"  }
     </div>
   );
 };

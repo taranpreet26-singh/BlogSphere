@@ -174,13 +174,7 @@ const Profile: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              }):<DotLottieReact
-              src="https://lottie.host/3b5387bc-3de1-4742-b961-a9ad533ad37a/0BpmdEwe5Q.lottie"
-              loop
-              autoplay
-              width={200}
-              height={200}
-            /> 
+              }):"No Blog Yet Posted"
             }:
           </div>
         </div>
