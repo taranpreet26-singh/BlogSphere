@@ -8,12 +8,14 @@ const Login: React.FC = () => {
   const navigate = useNavigate()
   const [email,setEmail] = useState("")
   const [password,setPassword]  = useState("")
+  const [status,setStatus] = useState("Log In")
 
   async function onLoginHandler() {
    try {
      if(!email || !password){
        toast.error("Following field is empty")
      }else{
+      setStatus("Please Wait......")
        const response = await axios.post('https://blogsphere-backend-qnih.onrender.com/api/v1/login',{
          email,
          password
@@ -21,6 +23,7 @@ const Login: React.FC = () => {
        if(response.data.token){
 
          toast.success(response.data.msg)
+         setStatus("Loged In")
          localStorage.setItem("token",response.data.token)
          if(localStorage.getItem("token")){
            navigate('/home')
@@ -30,7 +33,6 @@ const Login: React.FC = () => {
    } catch (error:any) {
       if(error.response.status === 402){
         toast.error(error.response.data.msg + " or " + "You're not Registered")
-
       }
    }
   }
@@ -60,7 +62,7 @@ const Login: React.FC = () => {
           }}/>
         </div>
         <div className='mt-10'>
-          <button className='bg-black text-white cursor-pointer rounded-full h-12 text-xl font-semibold w-[12rem] ' onClick={onLoginHandler}>Continue</button>
+          <button className='bg-black text-white cursor-pointer rounded-full h-12 text-xl font-semibold w-[12rem] ' onClick={onLoginHandler}>{status}</button>
         </div>
         <div className='mt-4 text-2xl hover:text-green-500 cursor-pointer' onClick={()=>{
                   navigate('/signup')

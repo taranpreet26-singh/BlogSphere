@@ -10,13 +10,15 @@ const Singup:React.FC = () => {
   const [firstName,setFirstName] = useState("")
   const [lastName,setLastName] = useState("")
   const [password,setPassword] = useState("")
-
+  const [status,setStatus] = useState("Sign Up")
   async function onSignUp(){
+  
    try {
      if(!email || !firstName || !lastName || !password ){ 
        toast.error("Enter the all field")
        return
       }else{
+        setStatus("Creating.....")
           const response = await axios.post('https://blogsphere-backend-qnih.onrender.com/api/v1/signup',{
           email,
           firstName,
@@ -24,6 +26,7 @@ const Singup:React.FC = () => {
           password
         })
        toast.success(response.data.msg)
+       setStatus("You're Signed Up")
        navigate('/login')
       } 
       
@@ -72,7 +75,7 @@ const Singup:React.FC = () => {
           }}  name="password" className='bg-gray-100 rounded-lg h-10 p-2 px-4'  id="password"  />
         </div>
         <div className='mt-10'>
-          <button className='bg-black text-white cursor-pointer rounded-full h-12 text-xl font-semibold w-[12rem] ' onClick={onSignUp}>Continue</button>
+          <button className='bg-black text-white cursor-pointer rounded-full h-12 text-xl font-semibold w-[12rem] ' onClick={onSignUp}>{status}</button>
         </div>
       </div>
       <Toaster position="top-center"  />
